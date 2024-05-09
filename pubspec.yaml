@@ -1,0 +1,64 @@
+name: weather_aplication
+description: "A new Flutter project."
+# La siguiente línea evita que el paquete se publique accidentalmente en pub.dev usando `flutter pub publish`.
+# Esto es preferible para paquetes privados.
+publish_to: 'none' # Elimina esta línea si deseas publicar en pub.dev
+
+# La siguiente define la versión y el número de build para tu aplicación.
+# Un número de versión son tres números separados por puntos, como 1.2.43
+# seguido opcionalmente por un número de build separado por un +.
+# Tanto la versión como el número de build pueden ser sobreescritos en la construcción de flutter
+# mediante la especificación de --build-name y --build-number, respectivamente.
+# En Android, build-name se usa como versionName mientras build-number se usa como versionCode.
+# Lee más sobre la versión de Android en https://developer.android.com/studio/publish/versioning
+# En iOS, build-name se usa como CFBundleShortVersionString mientras build-number se usa como CFBundleVersion.
+# Lee más sobre la versión de iOS en
+# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+# En Windows, build-name se usa como las partes mayor, menor y de parche
+# de las versiones del producto y del archivo, mientras que build-number se usa como sufijo de construcción.
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.3.1 <4.0.0'
+
+# Las dependencias especifican otros paquetes que tu paquete necesita para funcionar.
+# Para actualizar automáticamente las dependencias de tu paquete a las últimas versiones
+# considera ejecutar `flutter pub upgrade --major-versions`. Alternativamente,
+# las dependencias pueden ser actualizadas manualmente cambiando los números de versión a continuación a
+# la última versión disponible en pub.dev. Para ver qué dependencias tienen versiones más nuevas disponibles,
+# ejecuta `flutter pub outdated`.
+dependencies:
+  flutter:
+    sdk: flutter
+  geolocator: ^11.0.0
+  weather: ^3.1.1
+  intl: ^0.19.0
+  flutter_bloc: ^8.1.5
+  equatable: ^2.0.5
+
+  # Lo siguiente agrega la fuente de iconos Cupertino a tu aplicación.
+  # Úsalo con la clase CupertinoIcons para los iconos de estilo iOS.
+  cupertino_icons: ^1.0.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  # El paquete "flutter_lints" a continuación contiene un conjunto de lints recomendados para
+  # fomentar buenas prácticas de codificación. El conjunto de lints proporcionado por el paquete se
+  # activa en el archivo `analysis_options.yaml` ubicado en la raíz de tu
+  # paquete. Consulta ese archivo para obtener información sobre cómo desactivar lints específicos y
+  # activar otros adicionales.
+  flutter_lints: ^3.0.0
+
+# Para obtener información sobre la parte genérica de Dart de este archivo, consulta la
+# siguiente página: https://dart.dev/tools/pub/pubspec
+
+# La siguiente sección es específica para paquetes Flutter.
+flutter:
+  # La siguiente línea asegura que la fuente de iconos de Material esté
+  # incluida con tu aplicación, para que puedas usar los iconos en
+  # la clase de iconos de material.
+  uses-material-design: true
+  assets:
+    - assets/
