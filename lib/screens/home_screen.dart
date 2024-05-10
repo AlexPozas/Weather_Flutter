@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:intl/intl.dart';
+import 'package:weather/weather.dart';
 import 'package:weather_aplication/bloc/weather_bloc_bloc.dart';
 
 class HomeScren extends StatefulWidget {
@@ -67,21 +68,25 @@ class _HomeScrenState extends State<HomeScren> {
           child: Stack(
             children: [
               Align(
-                alignment: AlignmentDirectional(3, -0.3),
                 child: Container(
                   height: 300,
-                  width: 300,
+                  width: 700,
                   decoration: BoxDecoration(
-                      shape: BoxShape.circle, color: Colors.deepPurple),
+                      shape: BoxShape.circle,
+                      color: Color.fromARGB(255, 58, 135, 183)
+                      // Cambia a tu segundo color aquí
+                      ),
                 ),
               ),
               Align(
-                alignment: AlignmentDirectional(-3, -0.3),
                 child: Container(
-                  height: 300,
-                  width: 300,
+                  height: 500,
+                  width: 800,
                   decoration: BoxDecoration(
-                      shape: BoxShape.circle, color: Colors.deepPurple),
+                      shape: BoxShape.circle,
+                      color: Color.fromARGB(255, 58, 135, 183)
+                      // Cambia a tu segundo color aquí
+                      ),
                 ),
               ),
               Align(
@@ -122,7 +127,10 @@ class _HomeScrenState extends State<HomeScren> {
                                 fontSize: 25,
                                 fontWeight: FontWeight.bold),
                           ),
-                          getWeatherIcon(state.weather.weatherConditionCode!),
+                          Center(
+                            child: getWeatherIcon(
+                                state.weather.weatherConditionCode!),
+                          ),
                           Center(
                             child: Text(
                               '${state.weather.temperature!.celsius!.round()} ºC',
@@ -155,7 +163,7 @@ class _HomeScrenState extends State<HomeScren> {
                           ),
                           const SizedBox(height: 30),
                           Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
                               Row(
                                 children: [
@@ -169,7 +177,7 @@ class _HomeScrenState extends State<HomeScren> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        'Amanecer',
+                                        'Sunrise',
                                         style: TextStyle(
                                             color: Colors.white,
                                             fontWeight: FontWeight.w300),
@@ -199,7 +207,7 @@ class _HomeScrenState extends State<HomeScren> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       const Text(
-                                        'Anochecer',
+                                        'Sunset',
                                         style: TextStyle(
                                             color: Colors.white,
                                             fontWeight: FontWeight.w300),
@@ -226,7 +234,7 @@ class _HomeScrenState extends State<HomeScren> {
                             ),
                           ),
                           Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
                               Row(
                                 children: [
